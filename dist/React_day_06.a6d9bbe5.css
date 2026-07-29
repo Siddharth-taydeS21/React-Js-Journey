@@ -1,0 +1,20 @@
+.container {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.btn {
+  width: 100px;
+  height: 100px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+section {
+  margin-top: 50px;
+}
+/*# sourceMappingURL=React_day_06.a6d9bbe5.css.map */
