@@ -16,7 +16,7 @@
   "main": false,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel ./React_day_04/index.html"
+    "start": "parcel ./React_day_05/index.html"
   },
   "dependencies": {
     "parcel": "^2.16.4"
