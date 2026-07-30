@@ -729,9 +729,7 @@ var _appJsDefault = parcelHelpers.interopDefault(_appJs);
 var _appCounterJs = require("../components/AppCounter.js");
 var _appCounterJsDefault = parcelHelpers.interopDefault(_appCounterJs);
 const root = (0, _client.createRoot)(document.querySelector('#root'));
-root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _appCounterJsDefault.default), {
-    root: root
-}, void 0, false, {
+root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _appJsDefault.default), {}, void 0, false, {
     fileName: "React_day_06/script.js",
     lineNumber: 7,
     columnNumber: 13
@@ -17185,15 +17183,39 @@ module.exports = require("b0f0e6b9e8349dac");
 })();
 
 },{"6f0162e9ab224cd4":"jMk1U"}],"4ZGjQ":[function(require,module,exports,__globalThis) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-var _client = require("react-dom/client");
-var _appCounter = require("./components/AppCounter"); // const root = createRoot(document.getElementById('root'))
- // export default function App () {
- //   return <AppCounter root={root} />
- // }
-var _appCounterDefault = parcelHelpers.interopDefault(_appCounter);
+var $parcel$ReactRefreshHelpers$5fe5 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+$parcel$ReactRefreshHelpers$5fe5.init();
+var prevRefreshReg = globalThis.$RefreshReg$;
+var prevRefreshSig = globalThis.$RefreshSig$;
+$parcel$ReactRefreshHelpers$5fe5.prelude(module);
 
-},{"react-dom/client":"hrvwu","./components/AppCounter":"dnw5G","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"dnw5G":[function(require,module,exports,__globalThis) {
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>App);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _client = require("react-dom/client");
+var _appCounter = require("./components/AppCounter");
+var _appCounterDefault = parcelHelpers.interopDefault(_appCounter);
+function App({ root }) {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _appCounterDefault.default), {
+        root: root
+    }, void 0, false, {
+        fileName: "app.js",
+        lineNumber: 7,
+        columnNumber: 10
+    }, this);
+}
+_c = App;
+var _c;
+$RefreshReg$(_c, "App");
+
+  $parcel$ReactRefreshHelpers$5fe5.postlude(module);
+} finally {
+  globalThis.$RefreshReg$ = prevRefreshReg;
+  globalThis.$RefreshSig$ = prevRefreshSig;
+}
+},{"react-dom/client":"hrvwu","./components/AppCounter":"dnw5G","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","react/jsx-dev-runtime":"dVPUn","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"dnw5G":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$6c1c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$6c1c.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
@@ -17210,38 +17232,23 @@ var _button = require("./button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _basket = require("./Basket");
 var _basketDefault = parcelHelpers.interopDefault(_basket);
-var _client = require("react-dom/client");
-// const root = createRoot(document.querySelector('#root'));
-// console.log("root")
-let leftApplesCount = 10;
-let rightApplesCount = 0;
-const AppCounter = ({ root })=>{
+var _s = $RefreshSig$();
+const AppCounter = ()=>{
+    _s();
+    const [leftAppleCount, setLeftAppleCount] = (0, _react.useState)(10);
+    const [rightAppleCount, setRightAppleCount] = (0, _react.useState)(0);
     const leftButtonHandler = ()=>{
         // console.log('left button clicked')
-        if (rightApplesCount > 0) {
-            rightApplesCount--;
-            leftApplesCount++;
-            root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppCounter, {
-                root: root
-            }, void 0, false, {
-                fileName: "components/AppCounter.js",
-                lineNumber: 19,
-                columnNumber: 17
-            }, undefined));
+        if (rightAppleCount > 0) {
+            setRightAppleCount(rightAppleCount - 1);
+            setLeftAppleCount(leftAppleCount + 1);
         }
     };
     const rightButtonHandler = ()=>{
         // console.log('right button clicked')
-        if (leftApplesCount > 0) {
-            leftApplesCount--;
-            rightApplesCount++;
-            root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppCounter, {
-                root: root
-            }, void 0, false, {
-                fileName: "components/AppCounter.js",
-                lineNumber: 28,
-                columnNumber: 17
-            }, undefined));
+        if (leftAppleCount > 0) {
+            setLeftAppleCount(leftAppleCount - 1);
+            setRightAppleCount(rightAppleCount + 1);
         }
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
@@ -17249,11 +17256,11 @@ const AppCounter = ({ root })=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _basketDefault.default), {
                 basketName: "Basket-1",
-                basketCount: leftApplesCount
+                basketCount: leftAppleCount
             }, void 0, false, {
                 fileName: "components/AppCounter.js",
-                lineNumber: 34,
-                columnNumber: 9
+                lineNumber: 27,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
                 imageUrl: "https://png.pngtree.com/png-vector/20190419/ourmid/pngtree-vector-left-arrow-icon-png-image_956431.jpg",
@@ -17261,8 +17268,8 @@ const AppCounter = ({ root })=>{
                 clickEventHandler: leftButtonHandler
             }, void 0, false, {
                 fileName: "components/AppCounter.js",
-                lineNumber: 35,
-                columnNumber: 9
+                lineNumber: 28,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
                 imageUrl: 'https://www.freeiconspng.com/thumbs/arrow-icon/big-right-arrow-icon-007979--icons-etc-16.png',
@@ -17270,24 +17277,25 @@ const AppCounter = ({ root })=>{
                 clickEventHandler: rightButtonHandler
             }, void 0, false, {
                 fileName: "components/AppCounter.js",
-                lineNumber: 36,
-                columnNumber: 9
+                lineNumber: 29,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _basketDefault.default), {
                 basketName: "Basket-2",
-                basketCount: rightApplesCount
+                basketCount: rightAppleCount
             }, void 0, false, {
                 fileName: "components/AppCounter.js",
-                lineNumber: 37,
-                columnNumber: 9
+                lineNumber: 30,
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "components/AppCounter.js",
-        lineNumber: 33,
+        lineNumber: 26,
         columnNumber: 5
     }, undefined);
 };
+_s(AppCounter, "U27q/GctB+RLzpDRrOBIakQ680I=");
 _c = AppCounter;
 // root.render(<AppCounter />);
 exports.default = AppCounter;
@@ -17299,7 +17307,7 @@ $RefreshReg$(_c, "AppCounter");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","./button":"hWruE","./Basket":"aB7He","react-dom/client":"hrvwu","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"dVPUn":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","./button":"hWruE","./Basket":"aB7He","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"dVPUn":[function(require,module,exports,__globalThis) {
 'use strict';
 module.exports = require("ee51401569654d91");
 
