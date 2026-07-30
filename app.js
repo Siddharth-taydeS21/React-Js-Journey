@@ -1,5 +1,8 @@
+import { createRoot } from "react-dom/client";
 import AppCounter from "./components/AppCounter";
 
-export default function App () {
-  return <AppCounter/>
-}
+// const root = createRoot(document.getElementById('root'))
+
+// export default function App () {
+//   return <AppCounter root={root} />
+// }
