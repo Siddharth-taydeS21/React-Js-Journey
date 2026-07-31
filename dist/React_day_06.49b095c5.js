@@ -17232,6 +17232,9 @@ var _button = require("./button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _basket = require("./Basket");
 var _basketDefault = parcelHelpers.interopDefault(_basket);
+// ======== importing styles only for this component
+var _appCounterModuleCss = require("./AppCounter.module.css");
+var _appCounterModuleCssDefault = parcelHelpers.interopDefault(_appCounterModuleCss);
 var _s = $RefreshSig$();
 const AppCounter = ()=>{
     _s();
@@ -17252,7 +17255,7 @@ const AppCounter = ()=>{
         }
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
-        className: "container",
+        className: (0, _appCounterModuleCssDefault.default).AppContainer,
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _basketDefault.default), {
                 basketName: "Basket-1",
@@ -17260,7 +17263,7 @@ const AppCounter = ()=>{
                 children: 'Apples'
             }, void 0, false, {
                 fileName: "components/AppCounter.js",
-                lineNumber: 27,
+                lineNumber: 30,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
@@ -17269,7 +17272,7 @@ const AppCounter = ()=>{
                 clickEventHandler: leftButtonHandler
             }, void 0, false, {
                 fileName: "components/AppCounter.js",
-                lineNumber: 28,
+                lineNumber: 31,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
@@ -17278,7 +17281,7 @@ const AppCounter = ()=>{
                 clickEventHandler: rightButtonHandler
             }, void 0, false, {
                 fileName: "components/AppCounter.js",
-                lineNumber: 32,
+                lineNumber: 35,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _basketDefault.default), {
@@ -17286,13 +17289,13 @@ const AppCounter = ()=>{
                 basketCount: rightAppleCount
             }, void 0, false, {
                 fileName: "components/AppCounter.js",
-                lineNumber: 36,
+                lineNumber: 39,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "components/AppCounter.js",
-        lineNumber: 26,
+        lineNumber: 29,
         columnNumber: 5
     }, undefined);
 };
@@ -17308,7 +17311,7 @@ $RefreshReg$(_c, "AppCounter");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","./button":"hWruE","./Basket":"aB7He","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"dVPUn":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","./button":"hWruE","./Basket":"aB7He","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","./AppCounter.module.css":"1s0ZE"}],"dVPUn":[function(require,module,exports,__globalThis) {
 'use strict';
 module.exports = require("ee51401569654d91");
 
@@ -19922,6 +19925,9 @@ $RefreshReg$(_c, "Basket");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}]},["4W82f","3dT6H"], "3dT6H", "parcelRequired5d4", {}, null, null, "http://localhost:1234")
+},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"1s0ZE":[function(require,module,exports,__globalThis) {
+module.exports["AppContainer"] = `RjdiVW_AppContainer`;
+
+},{}]},["4W82f","3dT6H"], "3dT6H", "parcelRequired5d4", {}, null, null, "http://localhost:1234")
 
 //# sourceMappingURL=React_day_06.49b095c5.js.map

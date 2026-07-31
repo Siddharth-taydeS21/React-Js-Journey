@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import Button from './button'
 import Basket from './Basket'
 
+// ======== importing styles only for this component
+import styles from './AppCounter.module.css'
+
 const AppCounter = () => {
   const [leftAppleCount, setLeftAppleCount] = useState(10);
   const [rightAppleCount, setRightAppleCount] = useState(0);
@@ -23,7 +26,7 @@ const AppCounter = () => {
   }
 
   return (
-    <section className='container'>
+    <section className={styles.AppContainer}>
       <Basket basketName={"Basket-1"} basketCount={leftAppleCount} children={'Apples'} />
       <Button
         imageUrl={"https://png.pngtree.com/png-vector/20190419/ourmid/pngtree-vector-left-arrow-icon-png-image_956431.jpg"}
