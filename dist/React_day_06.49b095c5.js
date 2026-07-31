@@ -17256,7 +17256,8 @@ const AppCounter = ()=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _basketDefault.default), {
                 basketName: "Basket-1",
-                basketCount: leftAppleCount
+                basketCount: leftAppleCount,
+                children: 'Apples'
             }, void 0, false, {
                 fileName: "components/AppCounter.js",
                 lineNumber: 27,
@@ -17277,7 +17278,7 @@ const AppCounter = ()=>{
                 clickEventHandler: rightButtonHandler
             }, void 0, false, {
                 fileName: "components/AppCounter.js",
-                lineNumber: 29,
+                lineNumber: 32,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _basketDefault.default), {
@@ -17285,7 +17286,7 @@ const AppCounter = ()=>{
                 basketCount: rightAppleCount
             }, void 0, false, {
                 fileName: "components/AppCounter.js",
-                lineNumber: 30,
+                lineNumber: 36,
                 columnNumber: 7
             }, undefined)
         ]
@@ -19893,7 +19894,11 @@ const Basket = ({ basketName, basketCount })=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                 children: [
                     basketCount,
-                    " Apples"
+                    " Apples ",
+                    basketCount === 0 && '(Empty)',
+                    " ",
+                    basketCount === 10 && '(Full)',
+                    " "
                 ]
             }, void 0, true, {
                 fileName: "components/Basket.js",

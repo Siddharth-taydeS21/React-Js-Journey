@@ -24,9 +24,15 @@ const AppCounter = () => {
 
   return (
     <section className='container'>
-      <Basket basketName={"Basket-1"} basketCount={leftAppleCount} />
-      <Button imageUrl={"https://png.pngtree.com/png-vector/20190419/ourmid/pngtree-vector-left-arrow-icon-png-image_956431.jpg"} title={'left Arrow'} clickEventHandler={leftButtonHandler} />
-      <Button imageUrl={'https://www.freeiconspng.com/thumbs/arrow-icon/big-right-arrow-icon-007979--icons-etc-16.png'} title={'right Arrow'} clickEventHandler={rightButtonHandler} />
+      <Basket basketName={"Basket-1"} basketCount={leftAppleCount} children={'Apples'} />
+      <Button
+        imageUrl={"https://png.pngtree.com/png-vector/20190419/ourmid/pngtree-vector-left-arrow-icon-png-image_956431.jpg"}
+        title={'left Arrow'}
+        clickEventHandler={leftButtonHandler} />
+      <Button
+        imageUrl={'https://www.freeiconspng.com/thumbs/arrow-icon/big-right-arrow-icon-007979--icons-etc-16.png'}
+        title={'right Arrow'}
+        clickEventHandler={rightButtonHandler} />
       <Basket basketName={"Basket-2"} basketCount={rightAppleCount} />
     </section>
   )
