@@ -1,9 +1,9 @@
-export default function SearchBar() {
+export default function SearchBar({setQueryCb}) {
     return (
         <div className="search_category_container">
             <label htmlFor="search_input" id="search_label">
                 <i className="ri-search-line"></i>
-                <input type="text" id="search_input" placeholder="Search products"/>
+                <input type="text" onChange={(e) => {setQueryCb(e.target.value)}} id="search_input" placeholder="Search products"/>
             </label>
 
             <select name="category" className="category_input">

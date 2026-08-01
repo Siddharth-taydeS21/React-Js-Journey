@@ -17404,33 +17404,42 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>App);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
 var _header = require("./components/Header");
 var _headerDefault = parcelHelpers.interopDefault(_header);
 var _productsContainer = require("./components/ProductsContainer");
 var _productsContainerDefault = parcelHelpers.interopDefault(_productsContainer);
 var _searchBar = require("./components/SearchBar");
 var _searchBarDefault = parcelHelpers.interopDefault(_searchBar);
+var _s = $RefreshSig$();
 function App() {
+    _s();
+    const [query, setQuery] = (0, _react.useState)('');
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
                 fileName: "React_day_07/App.jsx",
-                lineNumber: 8,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _searchBarDefault.default), {}, void 0, false, {
-                fileName: "React_day_07/App.jsx",
-                lineNumber: 9,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _productsContainerDefault.default), {}, void 0, false, {
-                fileName: "React_day_07/App.jsx",
                 lineNumber: 10,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _searchBarDefault.default), {
+                setQueryCb: setQuery
+            }, void 0, false, {
+                fileName: "React_day_07/App.jsx",
+                lineNumber: 11,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _productsContainerDefault.default), {
+                searchQuery: query
+            }, void 0, false, {
+                fileName: "React_day_07/App.jsx",
+                lineNumber: 12,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true);
 }
+_s(App, "qO/HZodsWTfJhuzZtdaxiosei2U=");
 _c = App;
 var _c;
 $RefreshReg$(_c, "App");
@@ -17440,7 +17449,7 @@ $RefreshReg$(_c, "App");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","./components/Header":"19Mvj","./components/ProductsContainer":"gkgoF","./components/SearchBar":"9Z3Ef","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"19Mvj":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","./components/Header":"19Mvj","./components/ProductsContainer":"gkgoF","./components/SearchBar":"9Z3Ef","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","react":"jMk1U"}],"19Mvj":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$1d3a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$1d3a.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
@@ -19832,11 +19841,16 @@ var _productCard = require("./ProductCard");
 var _productCardDefault = parcelHelpers.interopDefault(_productCard);
 var _products = require("../products");
 var _productsDefault = parcelHelpers.interopDefault(_products);
-function ProductsContainer() {
+function ProductsContainer({ searchQuery }) {
+    let newArray = [];
     const data = (0, _productsDefault.default);
+    const filteredArray = data.forEach((product)=>{
+        const containsSubstring = product.search_tags.some((item)=>item.includes(searchQuery));
+        if (containsSubstring) newArray.push(product);
+    });
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "product_container",
-        children: data.map((product)=>{
+        children: newArray.map((product)=>{
             return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _productCardDefault.default), {
                 imageUrl: product.image_url,
                 productName: product.title,
@@ -19845,13 +19859,13 @@ function ProductsContainer() {
                 discountedPrice: product.discounted_price
             }, product.id, false, {
                 fileName: "React_day_07/components/ProductsContainer.jsx",
-                lineNumber: 11,
+                lineNumber: 18,
                 columnNumber: 25
             }, this);
         })
     }, void 0, false, {
         fileName: "React_day_07/components/ProductsContainer.jsx",
-        lineNumber: 7,
+        lineNumber: 14,
         columnNumber: 9
     }, this);
 }
@@ -21254,7 +21268,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>SearchBar);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-function SearchBar() {
+function SearchBar({ setQueryCb }) {
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "search_category_container",
         children: [
@@ -21271,6 +21285,9 @@ function SearchBar() {
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
                         type: "text",
+                        onChange: (e)=>{
+                            setQueryCb(e.target.value);
+                        },
                         id: "search_input",
                         placeholder: "Search products"
                     }, void 0, false, {
