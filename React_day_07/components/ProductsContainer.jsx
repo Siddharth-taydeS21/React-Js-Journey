@@ -35,6 +35,7 @@ export default function ProductsContainer({ searchQuery }) {
                             brand={product.brand}
                             price={product.price}
                             discountedPrice={product.discounted_price}
+                            id={product.id}
                         />
                     )
                 })

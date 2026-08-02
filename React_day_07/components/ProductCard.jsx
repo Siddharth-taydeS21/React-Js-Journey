@@ -1,6 +1,9 @@
-export default function ProductCard({imageUrl, productName, brand, discountedPrice, price}) {
+import { Link } from "react-router-dom";
+
+export default function ProductCard({imageUrl, productName, brand, discountedPrice, price, id}) {
+  // console.log(id);
   return (
-    <div className="product_card">
+    <Link className="product_card" to={`/product?name=${productName}&id=${id}`}>
       <div className="image_wrapper">
         <img src={imageUrl} alt={productName}/>
       </div>
@@ -12,6 +15,6 @@ export default function ProductCard({imageUrl, productName, brand, discountedPri
           <p className="price">₹{price.toLocaleString('en-IN')}</p>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
