@@ -21,7 +21,7 @@ const router = createBrowserRouter([
                 element: <div style={{marginTop: '100px'}}>This is About Page</div>,
             },
             {
-                path: "/product", // Matches any URL that doesn't exist
+                path: "/:product", // Matches any URL that doesn't exist
                 element: <ProductPage />,
             },
         ]

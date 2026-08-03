@@ -1,23 +1,29 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 export default function ProductPage() {
-  // 1. Get the query string (?product=shoes&size=9&size=10)
-  const queryString = window.location.search;
+  const param = useParams();
+  const id = param.product
 
-  // 2. Instantiate URLSearchParams
-  const urlParams = new URLSearchParams(queryString);
-
-  // 3. Get individual values
-  const productName = urlParams.get('name');
-  const id = urlParams.get('id');
-
-  // state variable for setting data in state 
+  //state variable for setting data in state 
   const [productData, setProductData] = useState(null);
 
-  // start fetch call here  
+  //state variable for handling error
+  const [notFound, setNotFound] = useState(false);
+
+  //start fetch call here  
   useEffect(() => {
     fetch(`https://6a50c67ec576c846dcb9db29.mockapi.io/SiddsOwnRestApi/products/${id}`)
-      .then(res => res.json())
+      .then(res =>{
+
+        // then blocks never returns error if the status is 400, 401, 404 or 500 
+        // for that situation we need strictly check the response is (200/ok) or not
+        if (!res.ok) {
+          throw new Error("Product not found");
+        }
+
+        return res.json();
+      })
       .then(data => {
         setProductData({
           title: data.title,
@@ -31,16 +37,26 @@ export default function ProductPage() {
           discountedPercentage: data.discount_percentage
         })
       })
+      .catch((err) => {
+        console.log(err);
+        console.log('something went wrong');
+        setNotFound(true)
+      });
     // console.log(productName, id)
   }, [])
 
+  if(notFound){
+    return(
+       <div style={{ marginTop: '100px' }}>Country Not Found...</div>
+      )
+  }
 
   return productData === null ? (
     // we can pass loading component here
     <div style={{ marginTop: '100px' }}>Loading...</div>
   ) : (
     <div className="productPage_container">
-      <button className="back_btn">
+      <button className="back_btn" onClick={() => history.back()}>
         <i className="ri-arrow-left-line"></i>Back
       </button>
 
@@ -88,4 +104,3 @@ export default function ProductPage() {
     </div>
   )
 }
-
