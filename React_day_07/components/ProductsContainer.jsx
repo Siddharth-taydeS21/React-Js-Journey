@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
+import ProductsContainerLoader from "./ProductsContainerLoader";
 
 export default function ProductsContainer({ searchQuery }) {
     const [products, setProducts] = useState([]);
@@ -24,7 +25,10 @@ export default function ProductsContainer({ searchQuery }) {
             newArray.push(product)
         }
     })
-    return (
+
+    return products.length === 0 ? (
+        <ProductsContainerLoader />
+    ) : (
         <div className="product_container">
             {
                 newArray.map(product => {

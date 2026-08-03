@@ -27290,6 +27290,8 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _productCard = require("./ProductCard");
 var _productCardDefault = parcelHelpers.interopDefault(_productCard);
+var _productsContainerLoader = require("./ProductsContainerLoader");
+var _productsContainerLoaderDefault = parcelHelpers.interopDefault(_productsContainerLoader);
 var _s = $RefreshSig$();
 function ProductsContainer({ searchQuery }) {
     _s();
@@ -27309,7 +27311,11 @@ function ProductsContainer({ searchQuery }) {
         const containsSubstring = product.search_tags.some((item)=>item.includes(searchQuery));
         if (containsSubstring) newArray.push(product);
     });
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+    return products.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _productsContainerLoaderDefault.default), {}, void 0, false, {
+        fileName: "React_day_07/components/ProductsContainer.jsx",
+        lineNumber: 30,
+        columnNumber: 9
+    }, this) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "product_container",
         children: newArray.map((product)=>{
             return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _productCardDefault.default), {
@@ -27321,13 +27327,13 @@ function ProductsContainer({ searchQuery }) {
                 id: product.id
             }, product.id, false, {
                 fileName: "React_day_07/components/ProductsContainer.jsx",
-                lineNumber: 32,
+                lineNumber: 36,
                 columnNumber: 25
             }, this);
         })
     }, void 0, false, {
         fileName: "React_day_07/components/ProductsContainer.jsx",
-        lineNumber: 28,
+        lineNumber: 32,
         columnNumber: 9
     }, this);
 }
@@ -27341,7 +27347,7 @@ $RefreshReg$(_c, "ProductsContainer");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","./ProductCard":"csw8W","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"csw8W":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","./ProductCard":"csw8W","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","./ProductsContainerLoader":"aUWqG"}],"csw8W":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$0564 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$0564.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
@@ -27447,7 +27453,78 @@ $RefreshReg$(_c, "ProductCard");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","react-router-dom":"61z4w"}],"k4oDs":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","react-router-dom":"61z4w"}],"aUWqG":[function(require,module,exports,__globalThis) {
+var $parcel$ReactRefreshHelpers$429a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+$parcel$ReactRefreshHelpers$429a.init();
+var prevRefreshReg = globalThis.$RefreshReg$;
+var prevRefreshSig = globalThis.$RefreshSig$;
+$parcel$ReactRefreshHelpers$429a.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>ProductsContainerLoader);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+function ProductsContainerLoader() {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "product_container",
+        children: Array.from({
+            length: 20
+        }).map((el, i)=>{
+            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "product_card_loader",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "image_loader"
+                    }, void 0, false, {
+                        fileName: "React_day_07/components/ProductsContainerLoader.jsx",
+                        lineNumber: 7,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "loading_text"
+                    }, void 0, false, {
+                        fileName: "React_day_07/components/ProductsContainerLoader.jsx",
+                        lineNumber: 8,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "loading_text"
+                    }, void 0, false, {
+                        fileName: "React_day_07/components/ProductsContainerLoader.jsx",
+                        lineNumber: 9,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "loading_text"
+                    }, void 0, false, {
+                        fileName: "React_day_07/components/ProductsContainerLoader.jsx",
+                        lineNumber: 10,
+                        columnNumber: 21
+                    }, this)
+                ]
+            }, i, true, {
+                fileName: "React_day_07/components/ProductsContainerLoader.jsx",
+                lineNumber: 6,
+                columnNumber: 24
+            }, this);
+        })
+    }, void 0, false, {
+        fileName: "React_day_07/components/ProductsContainerLoader.jsx",
+        lineNumber: 3,
+        columnNumber: 5
+    }, this);
+}
+_c = ProductsContainerLoader;
+var _c;
+$RefreshReg$(_c, "ProductsContainerLoader");
+
+  $parcel$ReactRefreshHelpers$429a.postlude(module);
+} finally {
+  globalThis.$RefreshReg$ = prevRefreshReg;
+  globalThis.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"dVPUn","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"k4oDs":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$bd2f = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$bd2f.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
@@ -27529,6 +27606,8 @@ parcelHelpers.export(exports, "default", ()=>ProductPage);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactRouterDom = require("react-router-dom");
+var _productPageLoader = require("./ProductPageLoader");
+var _productPageLoaderDefault = parcelHelpers.interopDefault(_productPageLoader);
 var _s = $RefreshSig$();
 function ProductPage() {
     _s();
@@ -27568,21 +27647,16 @@ function ProductPage() {
         style: {
             marginTop: '100px'
         },
-        children: "Country Not Found..."
+        children: "Product Not Found..."
     }, void 0, false, {
         fileName: "React_day_07/components/ProductPage.jsx",
-        lineNumber: 50,
+        lineNumber: 51,
         columnNumber: 8
     }, this);
     return productData === null ? // we can pass loading component here
-    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        style: {
-            marginTop: '100px'
-        },
-        children: "Loading..."
-    }, void 0, false, {
+    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _productPageLoaderDefault.default), {}, void 0, false, {
         fileName: "React_day_07/components/ProductPage.jsx",
-        lineNumber: 56,
+        lineNumber: 57,
         columnNumber: 5
     }, this) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "productPage_container",
@@ -27595,14 +27669,14 @@ function ProductPage() {
                         className: "ri-arrow-left-line"
                     }, void 0, false, {
                         fileName: "React_day_07/components/ProductPage.jsx",
-                        lineNumber: 60,
+                        lineNumber: 61,
                         columnNumber: 9
                     }, this),
                     "Back"
                 ]
             }, void 0, true, {
                 fileName: "React_day_07/components/ProductPage.jsx",
-                lineNumber: 59,
+                lineNumber: 60,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27615,12 +27689,12 @@ function ProductPage() {
                             alt: `${productData.title} image`
                         }, void 0, false, {
                             fileName: "React_day_07/components/ProductPage.jsx",
-                            lineNumber: 65,
+                            lineNumber: 66,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "React_day_07/components/ProductPage.jsx",
-                        lineNumber: 64,
+                        lineNumber: 65,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27633,7 +27707,7 @@ function ProductPage() {
                                         children: productData.title
                                     }, void 0, false, {
                                         fileName: "React_day_07/components/ProductPage.jsx",
-                                        lineNumber: 69,
+                                        lineNumber: 70,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -27641,13 +27715,13 @@ function ProductPage() {
                                         children: productData.brandName
                                     }, void 0, false, {
                                         fileName: "React_day_07/components/ProductPage.jsx",
-                                        lineNumber: 70,
+                                        lineNumber: 71,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "React_day_07/components/ProductPage.jsx",
-                                lineNumber: 68,
+                                lineNumber: 69,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27656,13 +27730,6 @@ function ProductPage() {
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                         className: "Starts",
                                         children: [
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                                className: "ri-star-fill"
-                                            }, void 0, false, {
-                                                fileName: "React_day_07/components/ProductPage.jsx",
-                                                lineNumber: 75,
-                                                columnNumber: 15
-                                            }, this),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
                                                 className: "ri-star-fill"
                                             }, void 0, false, {
@@ -27685,10 +27752,17 @@ function ProductPage() {
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                                className: "ri-star-half-line"
+                                                className: "ri-star-fill"
                                             }, void 0, false, {
                                                 fileName: "React_day_07/components/ProductPage.jsx",
                                                 lineNumber: 79,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                                className: "ri-star-half-line"
+                                            }, void 0, false, {
+                                                fileName: "React_day_07/components/ProductPage.jsx",
+                                                lineNumber: 80,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -27696,13 +27770,13 @@ function ProductPage() {
                                                 children: productData.ratings
                                             }, void 0, false, {
                                                 fileName: "React_day_07/components/ProductPage.jsx",
-                                                lineNumber: 80,
+                                                lineNumber: 81,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "React_day_07/components/ProductPage.jsx",
-                                        lineNumber: 74,
+                                        lineNumber: 75,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27715,18 +27789,18 @@ function ProductPage() {
                                             ]
                                         }, void 0, true, {
                                             fileName: "React_day_07/components/ProductPage.jsx",
-                                            lineNumber: 83,
+                                            lineNumber: 84,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "React_day_07/components/ProductPage.jsx",
-                                        lineNumber: 82,
+                                        lineNumber: 83,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "React_day_07/components/ProductPage.jsx",
-                                lineNumber: 73,
+                                lineNumber: 74,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27737,18 +27811,18 @@ function ProductPage() {
                                         children: productData.deliveryTime
                                     }, void 0, false, {
                                         fileName: "React_day_07/components/ProductPage.jsx",
-                                        lineNumber: 88,
+                                        lineNumber: 89,
                                         columnNumber: 34
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "React_day_07/components/ProductPage.jsx",
-                                lineNumber: 87,
+                                lineNumber: 88,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                                 fileName: "React_day_07/components/ProductPage.jsx",
-                                lineNumber: 91,
+                                lineNumber: 92,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27762,7 +27836,7 @@ function ProductPage() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "React_day_07/components/ProductPage.jsx",
-                                        lineNumber: 94,
+                                        lineNumber: 95,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27775,7 +27849,7 @@ function ProductPage() {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "React_day_07/components/ProductPage.jsx",
-                                                lineNumber: 98,
+                                                lineNumber: 99,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -27786,37 +27860,37 @@ function ProductPage() {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "React_day_07/components/ProductPage.jsx",
-                                                lineNumber: 99,
+                                                lineNumber: 100,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "React_day_07/components/ProductPage.jsx",
-                                        lineNumber: 97,
+                                        lineNumber: 98,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "React_day_07/components/ProductPage.jsx",
-                                lineNumber: 93,
+                                lineNumber: 94,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "React_day_07/components/ProductPage.jsx",
-                        lineNumber: 67,
+                        lineNumber: 68,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "React_day_07/components/ProductPage.jsx",
-                lineNumber: 63,
+                lineNumber: 64,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "React_day_07/components/ProductPage.jsx",
-        lineNumber: 58,
+        lineNumber: 59,
         columnNumber: 5
     }, this);
 }
@@ -27834,6 +27908,122 @@ $RefreshReg$(_c, "ProductPage");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","react":"jMk1U","react/jsx-dev-runtime":"dVPUn","react-router-dom":"61z4w"}]},["8g5co","6EF25"], "6EF25", "parcelRequired5d4", {}, null, null, "http://localhost:1234")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","react":"jMk1U","react/jsx-dev-runtime":"dVPUn","react-router-dom":"61z4w","./ProductPageLoader":"3vHKm"}],"3vHKm":[function(require,module,exports,__globalThis) {
+var $parcel$ReactRefreshHelpers$272d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+$parcel$ReactRefreshHelpers$272d.init();
+var prevRefreshReg = globalThis.$RefreshReg$;
+var prevRefreshSig = globalThis.$RefreshSig$;
+$parcel$ReactRefreshHelpers$272d.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>ProductPageLoader);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+function ProductPageLoader() {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "productDetails productDetails_loader",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "imageWrapper imageWrapper_loader"
+            }, void 0, false, {
+                fileName: "React_day_07/components/ProductPageLoader.jsx",
+                lineNumber: 4,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "productInfo",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "product_loading_text"
+                    }, void 0, false, {
+                        fileName: "React_day_07/components/ProductPageLoader.jsx",
+                        lineNumber: 8,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "product_loading_text"
+                    }, void 0, false, {
+                        fileName: "React_day_07/components/ProductPageLoader.jsx",
+                        lineNumber: 9,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "product_loading_text"
+                    }, void 0, false, {
+                        fileName: "React_day_07/components/ProductPageLoader.jsx",
+                        lineNumber: 10,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "product_loading_text"
+                    }, void 0, false, {
+                        fileName: "React_day_07/components/ProductPageLoader.jsx",
+                        lineNumber: 11,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "product_loading_text"
+                    }, void 0, false, {
+                        fileName: "React_day_07/components/ProductPageLoader.jsx",
+                        lineNumber: 12,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
+                        fileName: "React_day_07/components/ProductPageLoader.jsx",
+                        lineNumber: 13,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        style: {
+                            display: 'gird',
+                            justifyContent: 'start',
+                            alignItems: 'end',
+                            gap: '10px'
+                        },
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "product_loading_text"
+                            }, void 0, false, {
+                                fileName: "React_day_07/components/ProductPageLoader.jsx",
+                                lineNumber: 15,
+                                columnNumber: 17
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "product_loading_text"
+                            }, void 0, false, {
+                                fileName: "React_day_07/components/ProductPageLoader.jsx",
+                                lineNumber: 16,
+                                columnNumber: 17
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "React_day_07/components/ProductPageLoader.jsx",
+                        lineNumber: 14,
+                        columnNumber: 17
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "React_day_07/components/ProductPageLoader.jsx",
+                lineNumber: 7,
+                columnNumber: 13
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "React_day_07/components/ProductPageLoader.jsx",
+        lineNumber: 3,
+        columnNumber: 9
+    }, this);
+}
+_c = ProductPageLoader;
+var _c;
+$RefreshReg$(_c, "ProductPageLoader");
+
+  $parcel$ReactRefreshHelpers$272d.postlude(module);
+} finally {
+  globalThis.$RefreshReg$ = prevRefreshReg;
+  globalThis.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"dVPUn","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}]},["8g5co","6EF25"], "6EF25", "parcelRequired5d4", {}, null, null, "http://localhost:1234")
 
 //# sourceMappingURL=React_day_07.1d229332.js.map

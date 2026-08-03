@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import ProductPageLoader from "./ProductPageLoader";
 
 export default function ProductPage() {
   const param = useParams();
@@ -47,13 +48,13 @@ export default function ProductPage() {
 
   if(notFound){
     return(
-       <div style={{ marginTop: '100px' }}>Country Not Found...</div>
+       <div style={{ marginTop: '100px' }}>Product Not Found...</div>
       )
   }
 
   return productData === null ? (
     // we can pass loading component here
-    <div style={{ marginTop: '100px' }}>Loading...</div>
+    <ProductPageLoader />
   ) : (
     <div className="productPage_container">
       <button className="back_btn" onClick={() => history.back()}>
