@@ -6,8 +6,9 @@ export default function SearchBar({setQueryCb}) {
                 <input type="text" onChange={(e) => {setQueryCb(e.target.value)}} id="search_input" placeholder="Search products"/>
             </label>
 
-            <select name="category" className="category_input">
-                <option value="">Show products by category</option>
+            <select name="category" className="category_input" onChange={(e) => {setQueryCb(e.target.value)}}>
+                <option hidden>Show products by category</option>
+                <option value="">All products</option>
                 <option value="electronics">Electronics</option>
                 <option value="fashion">Fashion</option>
                 <option value="beauty">Beauty</option>

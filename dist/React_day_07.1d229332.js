@@ -27310,9 +27310,12 @@ function SearchBar({ setQueryCb }) {
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("select", {
                 name: "category",
                 className: "category_input",
+                onChange: (e)=>{
+                    setQueryCb(e.target.value);
+                },
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
-                        value: "",
+                        hidden: true,
                         children: "Show products by category"
                     }, void 0, false, {
                         fileName: "React_day_07/components/SearchBar.jsx",
@@ -27320,11 +27323,19 @@ function SearchBar({ setQueryCb }) {
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                        value: "",
+                        children: "All products"
+                    }, void 0, false, {
+                        fileName: "React_day_07/components/SearchBar.jsx",
+                        lineNumber: 11,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
                         value: "electronics",
                         children: "Electronics"
                     }, void 0, false, {
                         fileName: "React_day_07/components/SearchBar.jsx",
-                        lineNumber: 11,
+                        lineNumber: 12,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -27332,7 +27343,7 @@ function SearchBar({ setQueryCb }) {
                         children: "Fashion"
                     }, void 0, false, {
                         fileName: "React_day_07/components/SearchBar.jsx",
-                        lineNumber: 12,
+                        lineNumber: 13,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -27340,7 +27351,7 @@ function SearchBar({ setQueryCb }) {
                         children: "Beauty"
                     }, void 0, false, {
                         fileName: "React_day_07/components/SearchBar.jsx",
-                        lineNumber: 13,
+                        lineNumber: 14,
                         columnNumber: 17
                     }, this)
                 ]
