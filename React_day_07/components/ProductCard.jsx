@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 
-export default function ProductCard({imageUrl, productName, brand, discountedPrice, price, id}) {
+export default function ProductCard({imageUrl, productName, brand, discountedPrice, price, id, data}) {
   // console.log(id);
   return (
-    <Link className="product_card" to={`/${id}`}>
+    <Link className="product_card" to={`/${id}`} state={data}>
       <div className="image_wrapper">
         <img src={imageUrl} alt={productName}/>
       </div>

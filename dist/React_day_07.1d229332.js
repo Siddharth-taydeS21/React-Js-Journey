@@ -24750,21 +24750,27 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _header = require("./components/Header");
 var _headerDefault = parcelHelpers.interopDefault(_header);
 var _reactRouterDom = require("react-router-dom");
+var _contextProvider = require("./contexts/contextProvider");
+var _contextProviderDefault = parcelHelpers.interopDefault(_contextProvider);
 function App() {
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contextProviderDefault.default), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
                 fileName: "React_day_07/App.jsx",
-                lineNumber: 7,
+                lineNumber: 9,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
                 fileName: "React_day_07/App.jsx",
-                lineNumber: 8,
+                lineNumber: 10,
                 columnNumber: 7
             }, this)
         ]
-    }, void 0, true);
+    }, void 0, true, {
+        fileName: "React_day_07/App.jsx",
+        lineNumber: 8,
+        columnNumber: 5
+    }, this);
 }
 _c = App;
 var _c;
@@ -24775,7 +24781,7 @@ $RefreshReg$(_c, "App");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","./components/Header":"19Mvj","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","react-router-dom":"61z4w"}],"19Mvj":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","./components/Header":"19Mvj","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","react-router-dom":"61z4w","./contexts/contextProvider":"8pJyB"}],"19Mvj":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$1d3a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$1d3a.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
@@ -24787,7 +24793,17 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>Header);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _contextProvider = require("../contexts/contextProvider");
+var _s = $RefreshSig$();
 function Header() {
+    _s();
+    const [darkMode, setDarkMode] = (0, _react.useContext)((0, _contextProvider.darkModeContext));
+    // (updating dom or its styles) this practice is never recommended react 
+    // i am sill doing this because if i decide to do it by React's way, then i need to make so many changes in components and its styles
+    // and i do not wanted to do it, because i am tired 💀 
+    if (darkMode) document.body.classList.add('dark');
+    else document.body.classList.remove('dark');
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("header", {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("nav", {
             children: [
@@ -24796,44 +24812,49 @@ function Header() {
                     children: "Products Manager"
                 }, void 0, false, {
                     fileName: "React_day_07/components/Header.jsx",
-                    lineNumber: 5,
-                    columnNumber: 13
+                    lineNumber: 19,
+                    columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     className: "dark_mode_div",
+                    onClick: ()=>{
+                        localStorage.setItem("darkMode", !darkMode);
+                        setDarkMode(!darkMode);
+                    },
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                            children: "Dark Mode"
+                            children: darkMode ? 'Light mode' : 'Dark Mode'
                         }, void 0, false, {
                             fileName: "React_day_07/components/Header.jsx",
-                            lineNumber: 8,
-                            columnNumber: 17
+                            lineNumber: 25,
+                            columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                            className: "ri-moon-fill dark_mode_icon"
+                            className: `ri-${darkMode ? 'sun' : 'moon'}-fill`
                         }, void 0, false, {
                             fileName: "React_day_07/components/Header.jsx",
-                            lineNumber: 9,
-                            columnNumber: 17
+                            lineNumber: 26,
+                            columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "React_day_07/components/Header.jsx",
-                    lineNumber: 7,
-                    columnNumber: 13
+                    lineNumber: 21,
+                    columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "React_day_07/components/Header.jsx",
-            lineNumber: 4,
-            columnNumber: 9
+            lineNumber: 18,
+            columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "React_day_07/components/Header.jsx",
-        lineNumber: 3,
+        lineNumber: 17,
         columnNumber: 5
     }, this);
 }
+_s(Header, "PS67yL78PppdPw72KQiy5/JY7Es=");
 _c = Header;
 var _c;
 $RefreshReg$(_c, "Header");
@@ -24843,7 +24864,7 @@ $RefreshReg$(_c, "Header");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"7h6Pi":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","react":"jMk1U","../contexts/contextProvider":"8pJyB"}],"7h6Pi":[function(require,module,exports,__globalThis) {
 "use strict";
 var Refresh = require("7422ead32dcc1e6b");
 function debounce(func, delay) {
@@ -27121,7 +27142,48 @@ function $da9882e673ac146b$var$ErrorOverlay() {
     return null;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"SzOX5":[function(require,module,exports,__globalThis) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"8pJyB":[function(require,module,exports,__globalThis) {
+var $parcel$ReactRefreshHelpers$bc14 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+$parcel$ReactRefreshHelpers$bc14.init();
+var prevRefreshReg = globalThis.$RefreshReg$;
+var prevRefreshSig = globalThis.$RefreshSig$;
+$parcel$ReactRefreshHelpers$bc14.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "darkModeContext", ()=>darkModeContext);
+parcelHelpers.export(exports, "default", ()=>ContextProvider);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _s = $RefreshSig$();
+const darkModeContext = /*#__PURE__*/ (0, _react.createContext)();
+function ContextProvider({ children }) {
+    _s();
+    const [darkMode, setDarkMode] = (0, _react.useState)(JSON.parse(localStorage.getItem('darkMode')));
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(darkModeContext.Provider, {
+        value: [
+            darkMode,
+            setDarkMode
+        ],
+        children: children
+    }, void 0, false, {
+        fileName: "React_day_07/contexts/contextProvider.jsx",
+        lineNumber: 11,
+        columnNumber: 5
+    }, this);
+}
+_s(ContextProvider, "ttduejL8FWLA9xtdvNJQqJ7llog=");
+_c = ContextProvider;
+var _c;
+$RefreshReg$(_c, "ContextProvider");
+
+  $parcel$ReactRefreshHelpers$bc14.postlude(module);
+} finally {
+  globalThis.$RefreshReg$ = prevRefreshReg;
+  globalThis.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"SzOX5":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$870f = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$870f.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
@@ -27324,7 +27386,8 @@ function ProductsContainer({ searchQuery }) {
                 brand: product.brand,
                 price: product.price,
                 discountedPrice: product.discounted_price,
-                id: product.id
+                id: product.id,
+                data: product
             }, product.id, false, {
                 fileName: "React_day_07/components/ProductsContainer.jsx",
                 lineNumber: 36,
@@ -27360,11 +27423,12 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>ProductCard);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _reactRouterDom = require("react-router-dom");
-function ProductCard({ imageUrl, productName, brand, discountedPrice, price, id }) {
+function ProductCard({ imageUrl, productName, brand, discountedPrice, price, id, data }) {
     // console.log(id);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
         className: "product_card",
         to: `/${id}`,
+        state: data,
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "image_wrapper",
@@ -27613,36 +27677,48 @@ function ProductPage() {
     _s();
     const param = (0, _reactRouterDom.useParams)();
     const id = param.product;
+    const { state } = (0, _reactRouterDom.useLocation)();
     //state variable for setting data in state 
     const [productData, setProductData] = (0, _react.useState)(null);
     //state variable for handling error
     const [notFound, setNotFound] = (0, _react.useState)(false);
+    const UpdateProductPage = (data)=>{
+        setProductData({
+            title: data.title,
+            brandName: data.brand,
+            imageUrl: data.image_url,
+            ratings: data.ratings,
+            rating_count: data.rating_count,
+            deliveryTime: data.estimated_delivery_time,
+            price: data.price,
+            discountedPrice: data.discounted_price,
+            discountedPercentage: data.discount_percentage
+        });
+    };
     //start fetch call here  
     (0, _react.useEffect)(()=>{
+        // we can add details in our page using the state here,
+        // if state is there, then fill the data using it, or simply return to fetch call
+        if (state) {
+            UpdateProductPage(state);
+            return;
+        }
         fetch(`https://6a50c67ec576c846dcb9db29.mockapi.io/SiddsOwnRestApi/products/${id}`).then((res)=>{
             // then blocks never returns error if the status is 400, 401, 404 or 500 
             // for that situation we need strictly check the response is (200/ok) or not
             if (!res.ok) throw new Error("Product not found");
             return res.json();
         }).then((data)=>{
-            setProductData({
-                title: data.title,
-                brandName: data.brand,
-                imageUrl: data.image_url,
-                ratings: data.ratings,
-                rating_count: data.rating_count,
-                deliveryTime: data.estimated_delivery_time,
-                price: data.price,
-                discountedPrice: data.discounted_price,
-                discountedPercentage: data.discount_percentage
-            });
+            UpdateProductPage(data);
         }).catch((err)=>{
             console.log(err);
             console.log('something went wrong');
             setNotFound(true);
         });
     // console.log(productName, id)
-    }, []);
+    }, [
+        id
+    ]);
     if (notFound) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         style: {
             marginTop: '100px'
@@ -27650,13 +27726,13 @@ function ProductPage() {
         children: "Product Not Found..."
     }, void 0, false, {
         fileName: "React_day_07/components/ProductPage.jsx",
-        lineNumber: 51,
-        columnNumber: 8
+        lineNumber: 64,
+        columnNumber: 7
     }, this);
     return productData === null ? // we can pass loading component here
     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _productPageLoaderDefault.default), {}, void 0, false, {
         fileName: "React_day_07/components/ProductPage.jsx",
-        lineNumber: 57,
+        lineNumber: 70,
         columnNumber: 5
     }, this) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "productPage_container",
@@ -27669,14 +27745,14 @@ function ProductPage() {
                         className: "ri-arrow-left-line"
                     }, void 0, false, {
                         fileName: "React_day_07/components/ProductPage.jsx",
-                        lineNumber: 61,
+                        lineNumber: 74,
                         columnNumber: 9
                     }, this),
                     "Back"
                 ]
             }, void 0, true, {
                 fileName: "React_day_07/components/ProductPage.jsx",
-                lineNumber: 60,
+                lineNumber: 73,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27689,12 +27765,12 @@ function ProductPage() {
                             alt: `${productData.title} image`
                         }, void 0, false, {
                             fileName: "React_day_07/components/ProductPage.jsx",
-                            lineNumber: 66,
+                            lineNumber: 79,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "React_day_07/components/ProductPage.jsx",
-                        lineNumber: 65,
+                        lineNumber: 78,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27707,7 +27783,7 @@ function ProductPage() {
                                         children: productData.title
                                     }, void 0, false, {
                                         fileName: "React_day_07/components/ProductPage.jsx",
-                                        lineNumber: 70,
+                                        lineNumber: 83,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -27715,13 +27791,13 @@ function ProductPage() {
                                         children: productData.brandName
                                     }, void 0, false, {
                                         fileName: "React_day_07/components/ProductPage.jsx",
-                                        lineNumber: 71,
+                                        lineNumber: 84,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "React_day_07/components/ProductPage.jsx",
-                                lineNumber: 69,
+                                lineNumber: 82,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27734,35 +27810,35 @@ function ProductPage() {
                                                 className: "ri-star-fill"
                                             }, void 0, false, {
                                                 fileName: "React_day_07/components/ProductPage.jsx",
-                                                lineNumber: 76,
+                                                lineNumber: 89,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
                                                 className: "ri-star-fill"
                                             }, void 0, false, {
                                                 fileName: "React_day_07/components/ProductPage.jsx",
-                                                lineNumber: 77,
+                                                lineNumber: 90,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
                                                 className: "ri-star-fill"
                                             }, void 0, false, {
                                                 fileName: "React_day_07/components/ProductPage.jsx",
-                                                lineNumber: 78,
+                                                lineNumber: 91,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
                                                 className: "ri-star-fill"
                                             }, void 0, false, {
                                                 fileName: "React_day_07/components/ProductPage.jsx",
-                                                lineNumber: 79,
+                                                lineNumber: 92,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
                                                 className: "ri-star-half-line"
                                             }, void 0, false, {
                                                 fileName: "React_day_07/components/ProductPage.jsx",
-                                                lineNumber: 80,
+                                                lineNumber: 93,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -27770,13 +27846,13 @@ function ProductPage() {
                                                 children: productData.ratings
                                             }, void 0, false, {
                                                 fileName: "React_day_07/components/ProductPage.jsx",
-                                                lineNumber: 81,
+                                                lineNumber: 94,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "React_day_07/components/ProductPage.jsx",
-                                        lineNumber: 75,
+                                        lineNumber: 88,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27789,18 +27865,18 @@ function ProductPage() {
                                             ]
                                         }, void 0, true, {
                                             fileName: "React_day_07/components/ProductPage.jsx",
-                                            lineNumber: 84,
+                                            lineNumber: 97,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "React_day_07/components/ProductPage.jsx",
-                                        lineNumber: 83,
+                                        lineNumber: 96,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "React_day_07/components/ProductPage.jsx",
-                                lineNumber: 74,
+                                lineNumber: 87,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27811,18 +27887,18 @@ function ProductPage() {
                                         children: productData.deliveryTime
                                     }, void 0, false, {
                                         fileName: "React_day_07/components/ProductPage.jsx",
-                                        lineNumber: 89,
+                                        lineNumber: 102,
                                         columnNumber: 34
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "React_day_07/components/ProductPage.jsx",
-                                lineNumber: 88,
+                                lineNumber: 101,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                                 fileName: "React_day_07/components/ProductPage.jsx",
-                                lineNumber: 92,
+                                lineNumber: 105,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27836,7 +27912,7 @@ function ProductPage() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "React_day_07/components/ProductPage.jsx",
-                                        lineNumber: 95,
+                                        lineNumber: 108,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27849,54 +27925,55 @@ function ProductPage() {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "React_day_07/components/ProductPage.jsx",
-                                                lineNumber: 99,
+                                                lineNumber: 112,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                                 className: "discountPercentage",
                                                 children: [
                                                     productData.discountedPercentage,
-                                                    "%"
+                                                    "% off"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "React_day_07/components/ProductPage.jsx",
-                                                lineNumber: 100,
+                                                lineNumber: 113,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "React_day_07/components/ProductPage.jsx",
-                                        lineNumber: 98,
+                                        lineNumber: 111,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "React_day_07/components/ProductPage.jsx",
-                                lineNumber: 94,
+                                lineNumber: 107,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "React_day_07/components/ProductPage.jsx",
-                        lineNumber: 68,
+                        lineNumber: 81,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "React_day_07/components/ProductPage.jsx",
-                lineNumber: 64,
+                lineNumber: 77,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "React_day_07/components/ProductPage.jsx",
-        lineNumber: 59,
+        lineNumber: 72,
         columnNumber: 5
     }, this);
 }
-_s(ProductPage, "YNmobs9Cq1f6a5HeMQcSvp9XDSc=", false, function() {
+_s(ProductPage, "F0dVbmRB/KEJ1ldd+Bg6R9vdmY0=", false, function() {
     return [
-        (0, _reactRouterDom.useParams)
+        (0, _reactRouterDom.useParams),
+        (0, _reactRouterDom.useLocation)
     ];
 });
 _c = ProductPage;

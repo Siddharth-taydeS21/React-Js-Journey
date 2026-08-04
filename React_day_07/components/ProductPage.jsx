@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import ProductPageLoader from "./ProductPageLoader";
 
 export default function ProductPage() {
   const param = useParams();
   const id = param.product
+  const { state } = useLocation();
 
   //state variable for setting data in state 
   const [productData, setProductData] = useState(null);
@@ -12,10 +13,32 @@ export default function ProductPage() {
   //state variable for handling error
   const [notFound, setNotFound] = useState(false);
 
+  const UpdateProductPage = (data) => {
+    setProductData({
+      title: data.title,
+      brandName: data.brand,
+      imageUrl: data.image_url,
+      ratings: data.ratings,
+      rating_count: data.rating_count,
+      deliveryTime: data.estimated_delivery_time,
+      price: data.price,
+      discountedPrice: data.discounted_price,
+      discountedPercentage: data.discount_percentage
+    })
+  }
+
   //start fetch call here  
   useEffect(() => {
+    // we can add details in our page using the state here,
+    // if state is there, then fill the data using it, or simply return to fetch call
+    if (state) {
+      UpdateProductPage(state);
+      return;
+    }
+
+
     fetch(`https://6a50c67ec576c846dcb9db29.mockapi.io/SiddsOwnRestApi/products/${id}`)
-      .then(res =>{
+      .then(res => {
 
         // then blocks never returns error if the status is 400, 401, 404 or 500 
         // for that situation we need strictly check the response is (200/ok) or not
@@ -26,17 +49,7 @@ export default function ProductPage() {
         return res.json();
       })
       .then(data => {
-        setProductData({
-          title: data.title,
-          brandName: data.brand,
-          imageUrl: data.image_url,
-          ratings: data.ratings,
-          rating_count: data.rating_count,
-          deliveryTime: data.estimated_delivery_time,
-          price: data.price,
-          discountedPrice: data.discounted_price,
-          discountedPercentage: data.discount_percentage
-        })
+        UpdateProductPage(data);
       })
       .catch((err) => {
         console.log(err);
@@ -44,12 +57,12 @@ export default function ProductPage() {
         setNotFound(true)
       });
     // console.log(productName, id)
-  }, [])
+  }, [id])
 
-  if(notFound){
-    return(
-       <div style={{ marginTop: '100px' }}>Product Not Found...</div>
-      )
+  if (notFound) {
+    return (
+      <div style={{ marginTop: '100px' }}>Product Not Found...</div>
+    )
   }
 
   return productData === null ? (
@@ -97,7 +110,7 @@ export default function ProductPage() {
             </h1>
             <div>
               <span className="discountedPrice">₹{productData.price.toLocaleString('en-IN')}</span>
-              <span className="discountPercentage">{productData.discountedPercentage}%</span>
+              <span className="discountPercentage">{productData.discountedPercentage}% off</span>
             </div>
           </div>
         </div>
