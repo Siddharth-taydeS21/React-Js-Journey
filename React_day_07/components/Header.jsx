@@ -1,9 +1,7 @@
-import { useContext } from "react";
-import { darkModeContext } from "../contexts/contextProvider";
+import { useTheme } from "../hooks/useTheme";
 
 export default function Header() {
-  const [darkMode, setDarkMode] = useContext(darkModeContext);
-
+  const [darkMode, setDarkMode] = useTheme();
   // (updating dom or its styles) this practice is never recommended react 
   // i am sill doing this because if i decide to do it by React's way, then i need to make so many changes in components and its styles
   // and i do not wanted to do it, because i am tired 💀 

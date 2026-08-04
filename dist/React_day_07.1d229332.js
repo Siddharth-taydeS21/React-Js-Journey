@@ -24793,12 +24793,11 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>Header);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _contextProvider = require("../contexts/contextProvider");
+var _useTheme = require("../hooks/useTheme");
 var _s = $RefreshSig$();
 function Header() {
     _s();
-    const [darkMode, setDarkMode] = (0, _react.useContext)((0, _contextProvider.darkModeContext));
+    const [darkMode, setDarkMode] = (0, _useTheme.useTheme)();
     // (updating dom or its styles) this practice is never recommended react 
     // i am sill doing this because if i decide to do it by React's way, then i need to make so many changes in components and its styles
     // and i do not wanted to do it, because i am tired 💀 
@@ -24812,7 +24811,7 @@ function Header() {
                     children: "Products Manager"
                 }, void 0, false, {
                     fileName: "React_day_07/components/Header.jsx",
-                    lineNumber: 19,
+                    lineNumber: 17,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -24826,35 +24825,39 @@ function Header() {
                             children: darkMode ? 'Light mode' : 'Dark Mode'
                         }, void 0, false, {
                             fileName: "React_day_07/components/Header.jsx",
-                            lineNumber: 25,
+                            lineNumber: 23,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
                             className: `ri-${darkMode ? 'sun' : 'moon'}-fill`
                         }, void 0, false, {
                             fileName: "React_day_07/components/Header.jsx",
-                            lineNumber: 26,
+                            lineNumber: 24,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "React_day_07/components/Header.jsx",
-                    lineNumber: 21,
+                    lineNumber: 19,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "React_day_07/components/Header.jsx",
-            lineNumber: 18,
+            lineNumber: 16,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "React_day_07/components/Header.jsx",
-        lineNumber: 17,
+        lineNumber: 15,
         columnNumber: 5
     }, this);
 }
-_s(Header, "PS67yL78PppdPw72KQiy5/JY7Es=");
+_s(Header, "gq3g7T4qwO1pu1Rz96UUoyKougM=", false, function() {
+    return [
+        (0, _useTheme.useTheme)
+    ];
+});
 _c = Header;
 var _c;
 $RefreshReg$(_c, "Header");
@@ -24864,7 +24867,7 @@ $RefreshReg$(_c, "Header");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","react":"jMk1U","../contexts/contextProvider":"8pJyB"}],"7h6Pi":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","../hooks/useTheme":"kPpbj"}],"7h6Pi":[function(require,module,exports,__globalThis) {
 "use strict";
 var Refresh = require("7422ead32dcc1e6b");
 function debounce(func, delay) {
@@ -27142,7 +27145,32 @@ function $da9882e673ac146b$var$ErrorOverlay() {
     return null;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"8pJyB":[function(require,module,exports,__globalThis) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"kPpbj":[function(require,module,exports,__globalThis) {
+var $parcel$ReactRefreshHelpers$cbd4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+$parcel$ReactRefreshHelpers$cbd4.init();
+var prevRefreshReg = globalThis.$RefreshReg$;
+var prevRefreshSig = globalThis.$RefreshSig$;
+$parcel$ReactRefreshHelpers$cbd4.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useTheme", ()=>useTheme);
+var _react = require("react");
+var _contextProvider = require("../contexts/contextProvider");
+var _s = $RefreshSig$();
+const useTheme = ()=>{
+    _s();
+    return (0, _react.useContext)((0, _contextProvider.darkModeContext));
+};
+_s(useTheme, "gDsCjeeItUuvgOWf1v4qoK9RF6k=");
+
+  $parcel$ReactRefreshHelpers$cbd4.postlude(module);
+} finally {
+  globalThis.$RefreshReg$ = prevRefreshReg;
+  globalThis.$RefreshSig$ = prevRefreshSig;
+}
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","react":"jMk1U","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","../contexts/contextProvider":"8pJyB"}],"8pJyB":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$bc14 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$bc14.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
@@ -27183,7 +27211,7 @@ $RefreshReg$(_c, "ContextProvider");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"SzOX5":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","react":"jMk1U"}],"SzOX5":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$870f = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$870f.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
