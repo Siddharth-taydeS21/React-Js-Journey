@@ -109,6 +109,12 @@ Implemented filter by Category functionality in the project. project is complete
 
 ✅ episode 31 - Project Deployment
 
+✅ episode 32 - Intro to Vite. 
+1) Learned about - `npm create vite@latest` command to quickly setup a React project using `Vite`.
+2) which is Best scalable folder structure for a React project, best way to structure our HTML file with Script and Link tags (for importing fonts, CDN links, JS files). Right way to import CSS styles in React components. 
+3) best folder structure suggested by ChatGPT.
+4) Explored - crypto.randomUUID(), reduce() method real Implementation
+
 =====================================================================================================================
 
 Hooks i Explored in React.js - 
