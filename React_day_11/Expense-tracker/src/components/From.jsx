@@ -10,18 +10,44 @@ export default function From() {
     // ===================== FORM VALIDATION LOGIC ================ 
     //state for form Errors Oject
     const [errors, setErrors] = useState({});
-    const validateForm = ({ amount, title, category }) => {
+
+    // ======================= ALL FORM INPUT VALIDATION RULES WRITTEN IN A SINGLE SOURCE =========================
+    const formValidationConfigs = {
+        title: [
+            { required: true, massage: 'Title can not be empty' },
+            { minLength: 4, massage: 'Title must have more than 4 letters' }
+        ],
+        category: [
+            { required: true, massage: 'Please select an option form category' },
+        ],
+        amount: [
+            { required: true, massage: 'Amount can not be empty' },
+            { minValue: true, massage: 'Amount must be greater than 0' }
+        ]
+    }
+
+
+
+    const validateForm = (formData) => {
         let Errors = {}
-        // console.log(amount, category, title)
-        if (!category) {
-            Errors.category = 'Category is required';
-        }
-        if (!title) {
-            Errors.title = 'Title is required';
-        }
-        if (!amount) {
-            Errors.amount = 'Amount is required';
-        }
+        // console.log(formData);
+        Object.entries(formData).forEach(([key, value]) => (
+            formValidationConfigs[key].some(check => {
+                if (check.required && !value) {
+                    Errors[key] = check.massage;
+                    return true
+                }
+                if (check.minLength && value.length < 4) {
+                    Errors[key] = check.massage;
+                    return true
+                }
+                if (check.minValue && Number(value) === 0) {
+                    Errors[key] = check.massage;
+                    return true
+                }
+            })
+        ))
+
         setErrors(Errors)
         return Errors;
     }

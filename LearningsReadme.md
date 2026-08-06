@@ -133,6 +133,13 @@ simple explanation - `useRef()` hook allows us to create a mutable reference of 
 
 ✅ episode 35 - Learned about - how to add form validations on form inputs in React and show Error massages
 
+✅ episode 36 - 
+1) Learned about advanced form validation logic using the custom form validation configurations object approach. in form validation configurations object 
+   we can write our all input validation rules and then we can loop trough every rule to perform validations on all of our input fields in form. 
+2) made reusable components for input & select filed.
+3) used reusable input components & implemented advanced form validation using custom form validation configurations object approach.
+`Important realization : - we can use .some() method while performing validations, the .some() method will loop on every iterable if we return "true" at end` 
+
 =====================================================================================================================
 
 Hooks i Explored in React.js - 
