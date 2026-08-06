@@ -1,5 +1,7 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { FromContext } from "../contexts/FormContext";
+import InputField from "./InputField";
+import SelectField from "./SelectField";
 
 export default function From() {
     // importing state 
@@ -8,7 +10,7 @@ export default function From() {
     // ===================== FORM VALIDATION LOGIC ================ 
     //state for form Errors Oject
     const [errors, setErrors] = useState({});
-    const validateForm = ({amount, title, category}) => {
+    const validateForm = ({ amount, title, category }) => {
         let Errors = {}
         // console.log(amount, category, title)
         if (!category) {
@@ -37,11 +39,11 @@ export default function From() {
         e.preventDefault();
 
         const newExpense = allInputs;
-        newExpense.amount = Number(newExpense.amount)
 
         const ErrorFields = validateForm(newExpense);
-        if(Object.keys(ErrorFields).length) return;
+        if (Object.keys(ErrorFields).length) return;
 
+        newExpense.amount = Number(newExpense.amount)
         newExpense.id = crypto.randomUUID();
 
         setExpenses((prevData) => [...prevData, newExpense])
@@ -53,7 +55,7 @@ export default function From() {
     }
 
     const handleInput = (e) => {
-        const {name, value} = e.target;
+        const { name, value } = e.target;
         setAllInputs((prevData) => ({ ...prevData, [name]: value }))
         setErrors({});
     }
@@ -92,53 +94,34 @@ export default function From() {
         <div>
             <h1 className="section_title">Add Expense</h1>
             <form action="" onSubmit={(e) => { submitExpense(e) }}>
-                <label htmlFor="title">
-                    Title :
-                    <input
-                        type="text"
-                        name="title"
-                        id="title"
-                        placeholder="Add title"
-                        value={allInputs.title}
-                        onChange={handleInput}
-                        // ref={titleRef}
-                         />
-                        <p className="errorMsg">{errors.title}</p>
-                </label>
+                <InputField
+                    label="Title"
+                    id="title"
+                    type="text"
+                    value={allInputs.title}
+                    eventHandler={handleInput}
+                    errorMsg={errors.title}
+                />
 
-                <label htmlFor="category">
-                    Category :
-                    <select
-                        name="category"
-                        id="category"
-                        value={allInputs.category}
-                        onChange={handleInput}
-                        // ref={categoryRef}
-                        >
-                        <option disabled>Select category</option>
-                        <option value="Grocery">Grocery</option>
-                        <option value="Clothes">Clothes</option>
-                        <option value="Bills">Bills</option>
-                        <option value="Medicine">Medicine</option>
-                        <option value="Education">Education</option>
-                    </select>
-                    <p className="errorMsg">{errors.category}</p>
-                </label>
+                <SelectField
+                    key='category'
+                    id="category"
+                    value={allInputs.category}
+                    label="Category"
+                    eventHandler={handleInput}
+                    placeHolder='Select category'
+                    options={['Grocery', 'Clothes', 'Bills', 'Medicine', 'Education']}
+                    errorMsg={errors.category}
+                />
 
-                <label htmlFor="amount">
-                    Amount :
-                    <input
-                        type="number"
-                        id="amount"
-                        name="amount"
-                        placeholder="Add amount"
-                        value={allInputs.amount}
-                        onChange={handleInput}
-                        // ref={amountRef}
-                         />
-                        <p className="errorMsg">{errors.amount}</p>
-                </label>
-
+                <InputField
+                    label="Amount"
+                    id="amount"
+                    type="number"
+                    value={allInputs.amount}
+                    eventHandler={handleInput}
+                    errorMsg={errors.amount}
+                />
                 <button type="submit">Add</button>
             </form>
         </div>
