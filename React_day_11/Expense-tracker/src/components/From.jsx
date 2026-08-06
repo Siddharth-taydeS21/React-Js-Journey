@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { FromContext } from "../contexts/FormContext";
 
 export default function From() {
@@ -7,26 +7,55 @@ export default function From() {
 
     // ===================== FORM SUBMISSION LOGIC WITH useState hook ================ 
     //state for all inputs
-    const [allInputs, setAllInputs] = useState({
-        title: '',
-        category: '',
-        amount: ''
-    }); 
+    // const [allInputs, setAllInputs] = useState({
+    //     title: '',
+    //     category: '',
+    //     amount: ''
+    // }); 
 
-    // submit event handler for form 
+    // // submit event handler for form 
+    // const submitExpense = (e) => {
+    //     e.preventDefault();
+
+    //     const newExpense = allInputs;
+    //     newExpense.amount = Number(newExpense.amount)
+    //     newExpense.id = crypto.randomUUID();
+
+    //     setExpenses((prevData) => [...prevData, newExpense])
+    //     setAllInputs({
+    //         title: '',
+    //         category: '',
+    //         amount: ''
+    //     })
+    // }
+
+    // ===================== FORM SUBMISSION LOGIC WITH useRef hook ================ 
+    const titleRef = useRef(null)
+    const categoryRef = useRef(null)
+    const amountRef = useRef(null)
+
+    // Important Realization : useEffect code runs at end of its parent component's code!
+    // useEffect(() => {
+    //     console.log(titleRef)
+    //     console.log(categoryRef)
+    //     console.log(amountRef)
+    // }, [])
+
     const submitExpense = (e) => {
         e.preventDefault();
 
-        const newExpense = allInputs;
-        newExpense.amount = Number(newExpense.amount)
-        newExpense.id = crypto.randomUUID();
-    
+        const newExpense = {
+            title: titleRef.current.value,
+            category: categoryRef.current.value,
+            amount: Number(amountRef.current.value),
+            id: crypto.randomUUID()
+        }
+        // console.log(newExpense)
+
         setExpenses((prevData) => [...prevData, newExpense])
-        setAllInputs({
-            title: '',
-            category: '',
-            amount: ''
-        })
+        amountRef.current.value = '';
+        titleRef.current.value = '';
+        categoryRef.current.value = '';
     }
 
     return (
@@ -40,10 +69,11 @@ export default function From() {
                         name="title"
                         id="title"
                         placeholder="Add title"
-                        value={allInputs.title}
-                        onChange={(e) =>
-                            setAllInputs((prevData) => ({...prevData, title: e.target.value}))
-                        }
+                        // value={allInputs.title}
+                        // onChange={(e) =>
+                        //     setAllInputs((prevData) => ({...prevData, title: e.target.value}))
+                        // }
+                        ref={titleRef}
                         required />
                 </label>
 
@@ -52,10 +82,11 @@ export default function From() {
                     <select
                         name="category"
                         id="category"
-                        value={allInputs.category}
-                        onChange={(e) =>
-                            setAllInputs((prevData) => ({...prevData, category: e.target.value}))
-                        }
+                        // value={allInputs.category}
+                        // onChange={(e) =>
+                        //     setAllInputs((prevData) => ({...prevData, category: e.target.value}))
+                        // }
+                        ref={categoryRef}
                         required>
                         <option disabled>Select category</option>
                         <option value="all">All</option>
@@ -74,10 +105,11 @@ export default function From() {
                         id="amount"
                         name="amount"
                         placeholder="Add amount"
-                        value={allInputs.amount}
-                        onChange={(e) =>
-                            setAllInputs((prevData) => ({...prevData, amount: e.target.value}))
-                        }
+                        // value={allInputs.amount}
+                        // onChange={(e) =>
+                        //     setAllInputs((prevData) => ({...prevData, amount: e.target.value}))
+                        // }
+                        ref={amountRef}
                         required />
                 </label>
 
