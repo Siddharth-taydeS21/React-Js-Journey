@@ -89,6 +89,14 @@ label {
 
 label {
   gap: .2rem;
+  position: relative;
+}
+
+.errorMsg{
+  position: absolute;
+  top: 100%;
+  font-size: small;
+  color: red;
 }
 
 input,

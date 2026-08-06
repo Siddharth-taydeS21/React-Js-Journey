@@ -123,6 +123,16 @@ Implemented filter by Category functionality in the project. project is complete
 3) Controlled Inputs : Control inputs are the best examples of one-way data binding. Best practice recommended is to have the `onChange` event handlers on 
    all of your inputs. That `onChange` event should update the state, and the state updates will trigger UI render.
 
+✅ episode 34 -
+1) Learned about - `useRef()` hook in React. Any value or UI element linked with useState hook, will trigger the component Re-render on any change. In the case of 
+   useRef() hook, any value or UI element linked with useRef() hook will not trigger UI component re-render on change, and it has logic, which remembers the recent changes made with its Linked value or UI element.
+2) Implemented useRef hook in Expense tracker project and built another variant of form submission logic with useRef() hook,
+   and using it's `ref={ **value or UI element }` prop.
+
+simple explanation - `useRef()` hook allows us to create a mutable reference of a value or DOM element without triggering the component rerender When the value for the DOM element changes. 
+
+✅ episode 35 - Learned about - how to add form validations on form inputs in React and show Error massages
+
 =====================================================================================================================
 
 Hooks i Explored in React.js - 
