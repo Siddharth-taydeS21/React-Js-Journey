@@ -13,7 +13,7 @@ export default function Table() {
                         <th>
                             <div className="header-content">
                                 <select name="table_category" id="table_category">
-                                    <option hidden>Select category</option>
+                                    <option disabled>Select category</option>
                                     <option value="all">All</option>
                                     <option value="Grocery">Grocery</option>
                                     <option value="Clothes">Clothes</option>

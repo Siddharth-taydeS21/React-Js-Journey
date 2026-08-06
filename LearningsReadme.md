@@ -115,6 +115,14 @@ Implemented filter by Category functionality in the project. project is complete
 3) best folder structure suggested by ChatGPT.
 4) Explored - crypto.randomUUID(), reduce() method real Implementation
 
+✅ episode 33 -
+1) Unidirectional Data flow : it means the flow of data will only move form - Component state to Ui (Model -> View) or the data wil move from -
+   parent component -> child component -> UI. 
+2) One way data binding : Simple explanation is Our Components state will trigger the re-render of UI, But changes on the UI will not trigger the 
+   Components state update.
+3) Controlled Inputs : Control inputs are the best examples of one-way data binding. Best practice recommended is to have the `onChange` event handlers on 
+   all of your inputs. That `onChange` event should update the state, and the state updates will trigger UI render.
+
 =====================================================================================================================
 
 Hooks i Explored in React.js - 
