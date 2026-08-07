@@ -46,6 +46,7 @@
 
 body {
   background-color: var(--surface-color);
+  /* position: relative; */
 }
 
 header {
@@ -56,6 +57,7 @@ header {
   box-shadow: var(--shadow);
   position: sticky;
   top: 0;
+  z-index: 1;
 }
 
 nav {
@@ -92,7 +94,7 @@ label {
   position: relative;
 }
 
-.errorMsg{
+.errorMsg {
   position: absolute;
   top: 100%;
   font-size: small;
@@ -173,24 +175,51 @@ input {
   padding-left: 5px;
 }
 
+.context_menu {
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  display: grid;
+  width: fit-content;
+  position: absolute;
+  /* display: none; */
+  background-color: var(--bg-color);
+  box-shadow: var(--secondary-shadow);
+}
+
+.context_menu .edit_btn {
+  border-bottom: 2px solid var(--border-color);
+}
+
+.context_menu div {
+  padding: .3rem 1rem;
+  text-align: center;
+  align-self: center;
+  color: var(--text-color);
+}
+
+.context_menu div:hover{
+  background-color: var(--border-color);
+}
+
+
 @media (width < 350px) {
   .header-content {
-      flex-direction: column;
+    flex-direction: column;
   }
 }
 
 @media (width > 850px) {
   main {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
   }
 
   nav {
-      font-size: 28px;
+    font-size: 28px;
   }
 
   .up-arrow,
   .down-arrow {
-      font-size: 25px;
+    font-size: 25px;
   }
 }
