@@ -143,12 +143,21 @@ simple explanation - `useRef()` hook allows us to create a mutable reference of 
 ✅ episode 37 - 
 coded an advance, reusable, dynamic `useFilter()` custom hook for use it anywhere in our project. this function takes an `dataArray` to perform filtration, and a `call back function` which takes the exact filed form data array we want to filter. it takes dataArray & filter filed call back Fn and returns `filtered data array` and `setQuery()` hook to set the filter Query, if the filter query would change in future.  
 
+✅ episode 38 -
+1) Made a custom Context Menu with edit and delete options.
+2) Added delete functionality on expenses. - when the user clicks on context menu, then delete option the task will be deleted from Expense table
+
+✅ episode 39 -
+1) Added Edit functionality - when the user clicks on edit option on the context menu -> the selected expense item data will be populated on the Add expense form -> Add button's text will be changes to 'Save' -> changes will be added to the expense table ->  
+Save button's text will be changes to 'Add' again. 
+`Important realization : - always run the setState() call at the end of any function, because form the setState() call the component re-renders it self and the code after it might not work as expected!` 
 =====================================================================================================================
 
 Hooks i Explored in React.js - 
 useState
 useEffect
 useContext
+useRef
 
 React-router Hooks :-
 usePrams 

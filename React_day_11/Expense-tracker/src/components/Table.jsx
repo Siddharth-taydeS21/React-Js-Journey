@@ -2,22 +2,26 @@ import { useContext, useState } from "react"
 import { FromContext } from "../contexts/FormContext";
 import { useFilter } from "../hooks/useFilter";
 import ContextMenu from "./ContextMenu";
+import EditItemContext from "../contexts/EditItemContext";
 
 export default function Table() {
     // state for context menu
     const [contextMenuPosition, setContextMenuPosition] = useState({});
 
     // state for getting clicked row id
-    const [rowId, serRowId] = useState('');
+    const [rowId, setRowId] = useState('');
 
-    const [expenses, setExpenses] = useContext(FromContext);
+    const { expenses, setExpenses } = useContext(FromContext);
 
     const [filteredData, setQuery] = useFilter(expenses, (item) => item.category.toLowerCase())
 
     return (
-        <div className="table_parent" onClick={() => {setContextMenuPosition({})}}>
-            <h1 className="section_title">Your Expenses</h1>
-            <ContextMenu positions={contextMenuPosition} setPositions={setContextMenuPosition} rowId={rowId}/>
+        <div className="table_parent" onClick={() => { setContextMenuPosition({}) }}>
+            <h1 className="section_title">
+                Your Expenses
+                <small> (Right click on the item for edit or delete)</small>
+                </h1>
+            <ContextMenu positions={contextMenuPosition} setPositions={setContextMenuPosition} rowId={rowId} />
             <table>
                 <thead>
                     <tr>
@@ -52,8 +56,8 @@ export default function Table() {
                             return (
                                 <tr id={id} key={id} onContextMenu={(e) => {
                                     e.preventDefault();
-                                    serRowId(id)
-                                    setContextMenuPosition({left: e.clientX + window.scrollX + 4, top: e.clientY + window.scrollY})
+                                    setRowId(id);
+                                    setContextMenuPosition({ left: e.clientX + window.scrollX + 4, top: e.clientY + window.scrollY })
                                 }}>
                                     <td>{title}</td>
                                     <td>{category}</td>
@@ -66,7 +70,7 @@ export default function Table() {
                     <tr className="total-row">
                         <td>Total</td>
                         <td />
-                        <td>₹{filteredData.map(item => item.amount).reduce((acc, currentVal) => { return acc + currentVal }, 0).toLocaleString('en-IN')}</td>
+                        <td>₹{filteredData.map(item => item.amount).reduce((acc, currentVal) => { return acc + parseInt(currentVal) }, 0).toLocaleString('en-IN')}</td>
                     </tr>
                 </tbody>
             </table>

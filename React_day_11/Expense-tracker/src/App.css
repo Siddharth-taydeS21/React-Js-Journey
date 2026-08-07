@@ -195,6 +195,7 @@ input {
   text-align: center;
   align-self: center;
   color: var(--text-color);
+  cursor: pointer;
 }
 
 .context_menu div:hover{

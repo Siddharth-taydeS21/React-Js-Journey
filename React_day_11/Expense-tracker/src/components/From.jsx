@@ -2,10 +2,11 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { FromContext } from "../contexts/FormContext";
 import InputField from "./InputField";
 import SelectField from "./SelectField";
+import EditItemContext from "../contexts/EditItemContext";
 
 export default function From() {
     // importing state 
-    const [expenses, setExpenses] = useContext(FromContext);
+    const { expenses, setExpenses, editId, setEditId, allInputs, setAllInputs } = useContext(FromContext);
 
     // ===================== FORM VALIDATION LOGIC ================ 
     //state for form Errors Oject
@@ -53,25 +54,34 @@ export default function From() {
     }
 
     // ===================== FORM SUBMISSION LOGIC WITH useState hook ================ 
-    // state for all inputs
-    const [allInputs, setAllInputs] = useState({
-        title: '',
-        category: '',
-        amount: ''
-    });
-
     // submit event handler for form 
     const submitExpense = (e) => {
         e.preventDefault();
+        if (editId) {
+            console.log(editId)
+            setExpenses((prevExpenses) =>
+                prevExpenses.map((expense) => {
+                    if (expense.id === editId) {
+                        expense = { ...allInputs, id: editId }
+                    }
+                    return expense
+                })
+            )
+            setAllInputs({
+                title: '',
+                category: '',
+                amount: ''
+            })
+            setEditId('')
+            return;
+        }
 
         const newExpense = allInputs;
-
         const ErrorFields = validateForm(newExpense);
         if (Object.keys(ErrorFields).length) return;
 
         newExpense.amount = Number(newExpense.amount)
         newExpense.id = crypto.randomUUID();
-
         setExpenses((prevData) => [...prevData, newExpense])
         setAllInputs({
             title: '',
@@ -148,7 +158,7 @@ export default function From() {
                     eventHandler={handleInput}
                     errorMsg={errors.amount}
                 />
-                <button type="submit">Add</button>
+                <button type="submit">{editId ? 'Save' : 'Add'}</button>
             </form>
         </div>
     )
