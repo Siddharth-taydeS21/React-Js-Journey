@@ -140,6 +140,9 @@ simple explanation - `useRef()` hook allows us to create a mutable reference of 
 3) used reusable input components & implemented advanced form validation using custom form validation configurations object approach.
 `Important realization : - we can use .some() method while performing validations, the .some() method will loop on every iterable if we return "true" at end` 
 
+✅ episode 37 - 
+coded an advance, reusable, dynamic `useFilter()` custom hook for use it anywhere in our project. this function takes an `dataArray` to perform filtration, and a `call back function` which takes the exact filed form data array we want to filter. it takes dataArray & filter filed call back Fn and returns `filtered data array` and `setQuery()` hook to set the filter Query, if the filter query would change in future.  
+
 =====================================================================================================================
 
 Hooks i Explored in React.js - 
