@@ -16,7 +16,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/home",
+        path: "/",
         element: <HomePage />,
       },
       {
@@ -37,5 +37,3 @@ root.render(
     <RouterProvider router={router} />
   </StrictMode>,
 )
-
-

@@ -171,6 +171,14 @@ Save button's text will be changes to 'Add' again.
 1) Introduction to Tailwind CSS with React + Vite
 2) Started new mini project - Added header & home, about, contact & error page components using React-router setup 
 
+✅ episode 44 - 
+1) Learned about `NavLink` element - NavLink's `className` prop allows as to pass a call back function in it. in that callBack function
+   we can receive an object which included NavLink's active or inactive status. from the call back we can return a string which will be automatically set as the NavLink's class, weather it's a Tailwind's util class or normal class.
+2) Built a prototype with NavLinks in new mini project.
+
+✅ episode 45 - 
+1) Learned about - `React Portal`: React provides a `createPortal()` Method which takes 2 arguments - first the popup UI element & second the root element in our html file where this first argument (popup UI element) will be rendered. Portal motive & benefits of using it are - it keeps or renders our modals/popups outside the main root elements to prevent the Styling conflicts between popups & page elements.  
+
 =====================================================================================================================
 
 Hooks i Explored in React.js - 
