@@ -164,6 +164,13 @@ Save button's text will be changes to 'Add' again.
 1) made an Advanced `useLocalStorage()` - it uses useState, useEffect, and localStorage to set the Expense table data in to localStorage.
    This hook receives a key and initial data, then this hook will set the received initial data with the key in local storage. After that, this hook returns us the data as a state (it use useState() hook behind the scene). Another thing this hook returns is a setData callback function (Just like how the useState hook gives us a set data function), we can use this setData callback function later to update the data which we was set in the local storage using this `useLocalStorage` hook. 
 2) Implemented this `useLocalStorage()` hook in my Expense tracker project. 
+
+✅ episode 42 - Introduction & Exploration of React Developer tools 
+
+✅ episode 43 - 
+1) Introduction to Tailwind CSS with React + Vite
+2) Started new mini project - Added header & home, about, contact & error page components using React-router setup 
+
 =====================================================================================================================
 
 Hooks i Explored in React.js - 
