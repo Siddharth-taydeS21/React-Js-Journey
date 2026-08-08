@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { FromContext } from "../contexts/FormContext";
 import { useFilter } from "../hooks/useFilter";
 import ContextMenu from "./ContextMenu";
@@ -15,17 +15,27 @@ export default function Table() {
 
     const [filteredData, setQuery] = useFilter(expenses, (item) => item.category.toLowerCase())
 
+    const [sortCallBack, setSortCallBack] = useState(() => () => { })
+
     return (
         <div className="table_parent" onClick={() => { setContextMenuPosition({}) }}>
             <h1 className="section_title">
                 Your Expenses
-                <small> (Right click on the item for edit or delete)</small>
-                </h1>
+                <small style={{ fontWeight: "normal" }}> (Right click on the item for edit or delete)</small>
+            </h1>
             <ContextMenu positions={contextMenuPosition} setPositions={setContextMenuPosition} rowId={rowId} />
             <table>
                 <thead>
                     <tr>
-                        <th>Title</th>
+                        <th>
+                            <div className="header-content">
+                                Title
+                                <div>
+                                    <i title="Sort by A-Z" className="ri-arrow-up-box-fill up-arrow" onClick={() => { setSortCallBack(() => (a, b) => a.title.localeCompare(b.title)) }}></i>
+                                    <i title="Sort by Z-A" className="ri-arrow-down-box-fill down-arrow" onClick={() => { setSortCallBack(() => (a, b) => b.title.localeCompare(a.title)) }}></i>
+                                </div>
+                            </div>
+                        </th>
                         <th>
                             <div className="header-content">
                                 <select name="table_category" id="table_category" onChange={(e) => { setQuery(e.target.value.toLowerCase()) }}>
@@ -43,8 +53,8 @@ export default function Table() {
                             <div className="header-content">
                                 <span>Amount</span>
                                 <div>
-                                    <i className="ri-arrow-up-box-fill up-arrow"></i>
-                                    <i className="ri-arrow-down-box-fill down-arrow"></i>
+                                    <i title="Sort by ascending" className="ri-arrow-up-box-fill up-arrow" onClick={() => { setSortCallBack(() => (a, b) => (a.amount - b.amount)) }}></i>
+                                    <i title="Sort by descending" className="ri-arrow-down-box-fill down-arrow" onClick={() => { setSortCallBack(() => (a, b) => (b.amount - a.amount)) }}></i>
                                 </div>
                             </div>
                         </th>
@@ -52,7 +62,7 @@ export default function Table() {
                 </thead>
                 <tbody>
                     {
-                        filteredData.map(({ id, title, category, amount }) => {
+                        filteredData.sort(sortCallBack).map(({ id, title, category, amount }) => {
                             return (
                                 <tr id={id} key={id} onContextMenu={(e) => {
                                     e.preventDefault();
@@ -69,7 +79,7 @@ export default function Table() {
 
                     <tr className="total-row">
                         <td>Total</td>
-                        <td />
+                        <td onClick={() => { setSortCallBack(() => () => { }) }} style={{ cursor: 'pointer' }}>Clear sort</td>
                         <td>₹{filteredData.map(item => item.amount).reduce((acc, currentVal) => { return acc + parseInt(currentVal) }, 0).toLocaleString('en-IN')}</td>
                     </tr>
                 </tbody>

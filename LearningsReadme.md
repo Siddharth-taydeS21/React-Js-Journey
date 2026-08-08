@@ -151,6 +151,14 @@ coded an advance, reusable, dynamic `useFilter()` custom hook for use it anywher
 1) Added Edit functionality - when the user clicks on edit option on the context menu -> the selected expense item data will be populated on the Add expense form -> Add button's text will be changes to 'Save' -> changes will be added to the expense table ->  
 Save button's text will be changes to 'Add' again. 
 `Important realization : - always run the setState() call at the end of any function, because form the setState() call the component re-renders it self and the code after it might not work as expected!` 
+
+✅ episode 40 -
+1) `Added Advanced Sorting Functionality` - with the help of this. The user can sort the Expense table by amount (like highest <-> lowest & lowest <-> highest),
+   and also the user can sort the Expense table by title, A to Z and Z to A.
+2) `Clear sort feature` - Added clear sort Button! used a separate state for storing the original DataArray. The clear sort functionality will never touch the 
+   stored DataArray, Instead, it will perform sorting operations on a copy of the stored DataArray. On any sorting action, the sorting functionality will 
+   return sorted data, after performing certain sorting operation on the original DataArray. If the user clicks on clear sort, the sorting functionality will
+   return the original data array which he saved at the very first.
 =====================================================================================================================
 
 Hooks i Explored in React.js - 
