@@ -159,6 +159,11 @@ Save button's text will be changes to 'Add' again.
    stored DataArray, Instead, it will perform sorting operations on a copy of the stored DataArray. On any sorting action, the sorting functionality will 
    return sorted data, after performing certain sorting operation on the original DataArray. If the user clicks on clear sort, the sorting functionality will
    return the original data array which he saved at the very first.
+
+✅ episode 41 -
+1) made an Advanced `useLocalStorage()` - it uses useState, useEffect, and localStorage to set the Expense table data in to localStorage.
+   This hook receives a key and initial data, then this hook will set the received initial data with the key in local storage. After that, this hook returns us the data as a state (it use useState() hook behind the scene). Another thing this hook returns is a setData callback function (Just like how the useState hook gives us a set data function), we can use this setData callback function later to update the data which we was set in the local storage using this `useLocalStorage` hook. 
+2) Implemented this `useLocalStorage()` hook in my Expense tracker project. 
 =====================================================================================================================
 
 Hooks i Explored in React.js - 

@@ -71,7 +71,7 @@ export default function Table() {
                                 }}>
                                     <td>{title}</td>
                                     <td>{category}</td>
-                                    <td id="amount">₹{amount.toLocaleString('en-IN')}</td>
+                                    <td id="amount">₹{parseInt(amount).toLocaleString('en-IN')}</td>
                                 </tr>
                             )
                         })
