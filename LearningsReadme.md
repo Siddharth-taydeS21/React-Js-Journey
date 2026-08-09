@@ -179,6 +179,13 @@ Save button's text will be changes to 'Add' again.
 ✅ episode 45 - 
 1) Learned about - `React Portal`: React provides a `createPortal()` Method which takes 2 arguments - first the popup UI element & second the root element in our html file where this first argument (popup UI element) will be rendered. Portal motive & benefits of using it are - it keeps or renders our modals/popups outside the main root elements to prevent the Styling conflicts between popups & page elements.  
 
+✅ episode 45 - Code splitting & lazy loading in React
+1) for lazy loading of components we use `lazy()` & `import()` functions of React. like this -
+   const Component = lazy(() => import('./Component'))
+2) to make the Code splitting & lazy loading work properly we need `<Suspense></Suspense>` component form React. we need to wrap 
+   this <Suspense> component on our main component which renders all pages or routes of our application. 
+3) this Suspense component gives us a `fallback={<LoadingComponent />}` prop which can paly the role of site/page Loader while 
+   our pages/site is loading. 
 =====================================================================================================================
 
 Hooks i Explored in React.js - 

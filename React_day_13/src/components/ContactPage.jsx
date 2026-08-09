@@ -1,4 +1,4 @@
-export default function ContactPage() {
+export function ContactPage() {
     return (
         <main className="py-15 flex justify-center gap-4 flex-col items-center">
             <div className="size-40 my-10 animate-[spin_8s_linear_infinite] flex justify-center items-center">

@@ -2,11 +2,20 @@ import { createRoot } from 'react-dom/client';
 import App from './App';
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { StrictMode } from 'react';
-import HomePage from './components/HomePage';
-import AboutPage from './components/AboutPage';
-import ContactPage from './components/ContactPage';
-import ErrorPage from './components/ErrorPage';
+import { lazy, StrictMode } from 'react';
+
+// import HomePage from './components/HomePage';
+// import AboutPage from './components/AboutPage';
+// import ContactPage from './components/ContactPage';
+// import ErrorPage from './components/ErrorPage';
+
+// ========== HANDLE DEFAULT EXPORTS WITH lazy() & import() function ========
+const AboutPage = lazy(() => import('./components/AboutPage'))
+const HomePage = lazy(() => import('./components/HomePage'))
+const ErrorPage = lazy(() => import('./components/ErrorPage'))
+
+// ========== HANDLE NAMED EXPORTS WITH lazy() & import() function ========
+const ContactPage = lazy(() => import('./components/ContactPage').then((module) => ({default: module.ContactPage})))
 
 // Define the routes configuration array
 const router = createBrowserRouter([
