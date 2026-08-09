@@ -198,6 +198,14 @@ Save button's text will be changes to 'Add' again.
       }
    }
 2) useState alternative in class components - this.state for defining state, this.setState for updating state. built a small prototype in project.
+
+✅ episode 48 - Common Lifecycle methods is React
+1) Constructor - Runs at very first
+2) render - runs when component renders UI on page
+3) componentDidMount - runs at the end when a component did render (equivalent to useEffect()) 
+4) componentDidUpdate - it never runs at the start, it runs when state update + re-renders (equivalent to useEffect() who is monitoring a state update in his dependency array) 
+5) componentWillUnMount - it runs when the Component has excluded form the app (equivalent to useEffect's returned clean up  call back function)
+
 =====================================================================================================================
 
 Hooks i Explored in React.js - 

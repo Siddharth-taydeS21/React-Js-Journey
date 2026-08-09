@@ -29,7 +29,7 @@ export default function Header() {
           <li className="md:text-lg font-semibold transition-colors duration-300 hover:text-gray-400">
             <NavLink
               to={"/contact"}
-              className='md:text-lg text-green-400 underline font-semibold transition-colors duration-300 hover:text-green-400'
+              className='md:text-lg font-semibold transition-colors duration-300 hover:text-blue-400'
               onClick={() => { setIsOpen(true) }}
             >
               Sign in
