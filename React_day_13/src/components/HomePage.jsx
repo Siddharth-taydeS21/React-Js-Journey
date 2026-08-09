@@ -1,3 +1,5 @@
+import ClickCounter from "./ClickCounter";
+import HoverCounter from "./HoverCounter";
 import NewVersion from "./NewVersion";
 import OldVersion from "./OldVersion";
 
@@ -9,8 +11,11 @@ export default function HomePage() {
       </div>
       <h1 className="text-3xl font-bold text-green-300 text-shadow-2xs/50">Hey there! You are on Home page Now!</h1>
       <p>No content added on the page yet! it's Coming Soon!</p>
-      <NewVersion />
-      <OldVersion />
+      {/* <NewVersion />
+      <OldVersion /> */}
+
+      <ClickCounter />
+      <HoverCounter />
     </main>
   )
 }

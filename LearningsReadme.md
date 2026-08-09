@@ -206,6 +206,12 @@ Save button's text will be changes to 'Add' again.
 4) componentDidUpdate - it never runs at the start, it runs when state update + re-renders (equivalent to useEffect() who is monitoring a state update in his dependency array) 
 5) componentWillUnMount - it runs when the Component has excluded form the app (equivalent to useEffect's returned clean up  call back function)
 
+✅ episode 49 - .bind() method on this keyword 
+
+✅ episode 50 - Higher order class components
+1) HOCs are best for reusability. child components of a HOC can reuse the state, state updater function and other helper functions given by the Higher order parent class component.
+2) built a small prototype of HOC in project
+
 =====================================================================================================================
 
 Hooks i Explored in React.js - 
