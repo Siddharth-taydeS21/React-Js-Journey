@@ -212,6 +212,12 @@ Save button's text will be changes to 'Add' again.
 1) HOCs are best for reusability. child components of a HOC can reuse the state, state updater function and other helper functions given by the Higher order parent class component.
 2) built a small prototype of HOC in project
 
+✅ episode 51 - Created my own Mini version of react💪🚀
+1) Recreated createElement() method in React from scratch...
+it takes (type, props, children) as prams and returns an react like object with same props, which we can use to create A real DOM element for rendering.  
+2) Recreated render() method in React from scratch...
+its takes (reactElement, rootElement) as params. it handles the creation of react elements by reding each given element's type, props & children properties. it has multiple checks for creating DOM elements form strings, numbers, arrays, functions (Components) & array of elements. it utilizes Recursions for converting complex JSX in to real DOM elements repeatedly. 
+
 =====================================================================================================================
 
 Hooks i Explored in React.js - 
