@@ -218,6 +218,15 @@ it takes (type, props, children) as prams and returns an react like object with 
 2) Recreated render() method in React from scratch...
 its takes (reactElement, rootElement) as params. it handles the creation of react elements by reding each given element's type, props & children properties. it has multiple checks for creating DOM elements form strings, numbers, arrays, functions (Components) & array of elements. it utilizes Recursions for converting complex JSX in to real DOM elements repeatedly. 
 
+✅ episode 52 -  
+1) Recreated useState() Hook in my mini React version from scratch...
+2) Recreated the core logic behind updating the state & also the re-render trigger of virtual dom.
+
+✅ episode 52 - Virtual DOM in React, Diffing algorithm, Reconciliation :
+1) Diffing algorithm : the process of comparing previous Virtual DOM tree, and determining which what has changed, is called Diffing algorithm.
+1) Virtual DOM in React : the browsers DOM has too many props to compare it in diffing algorithm, for that react creates it's own lightweight representation of DOM tree. that lightweight representation of DOM is called Virtual DOM.
+2) Reconciliation : the process of finding difference between previous Virtual DOM tree and determining what has changed then only committing the necessary change to the DOM tree is called Reconciliation. 
+
 =====================================================================================================================
 
 Hooks i Explored in React.js - 
